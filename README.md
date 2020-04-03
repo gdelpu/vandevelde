@@ -1,10 +1,10 @@
-#van de velde
+# van de velde
 Helper plugin to decorate Hapi objects with module's exports.
 
-####Note:
+#### Note:
 Named after "Henry Van de Velde" a famous belgian interior **decorator**  
 
-##usage
+## Usage
 
 Register **vandevelde** plugin in an Hapi server
 
