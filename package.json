@@ -1,11 +1,11 @@
 {
   "name": "vandevelde",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This a a HAPI plugin meant to decorate server and/or request with methods from a module",
   "main": "./lib/index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "files": [
+    "lib/**"
+  ],
   "scripts": {
     "test": "lab"
   },
