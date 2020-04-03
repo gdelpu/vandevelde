@@ -1,0 +1,6 @@
+{
+  "extends": "@hapi/eslint-config-hapi",
+  "rules": {
+    "brace-style": ["error", "1tbs"]
+  }
+}
