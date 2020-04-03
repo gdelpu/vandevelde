@@ -1,4 +1,6 @@
 # van de velde
+![Node.js package](https://github.com/gdelpu/vandevelde/workflows/Node.js%20package/badge.svg)
+
 Helper plugin to decorate Hapi objects with module's exports.
 
 #### Note:
