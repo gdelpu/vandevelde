@@ -1,0 +1,28 @@
+<testsuites tests="8" errors="0" failures="0" time="0.157">
+<testsuite name="Vandevelde" tests="8" skipped="0" errors="0" time="0.016000000000000004">
+<testcase classname="Vandevelde" name="should export register method" time="0.002">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should validate register options" time="0.003">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should accept single object as option" time="0.002">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should accept array of objects as option" time="0.001">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should accept objects as module" time="0.005">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should accept function as module" time="0.001">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should create a hosting property named after options.name" time="0.001">
+
+    </testcase>
+<testcase classname="Vandevelde" name="should decorate with module&#x27;s exported objects" time="0.001">
+
+    </testcase>
+</testsuite>
+</testsuites>
