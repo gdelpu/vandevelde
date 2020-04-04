@@ -1,4 +1,4 @@
-name: Node.js package
+name: publish Node.js package
 
 on:
   pull_request:
@@ -7,7 +7,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
