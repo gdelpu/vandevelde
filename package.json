@@ -1,7 +1,7 @@
 {
-  "name": "vandevelde",
+  "name": "@gdelpu/vandevelde",
   "version": "0.1.0",
-  "description": "This a a HAPI plugin meant to decorate server and/or request with methods from a module",
+  "description": "This a a HAPI plugin meant to decorate Hapi objects (server, request, handler, toolkit ...) with exports from a module",
   "main": "./lib/index.js",
   "files": [
     "lib/**"
