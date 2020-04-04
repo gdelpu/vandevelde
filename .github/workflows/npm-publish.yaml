@@ -1,9 +1,6 @@
 name: publish Node.js package
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
     branches:
       - master
