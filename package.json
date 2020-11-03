@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "This a a HAPI plugin meant to decorate Hapi objects (server, request, handler, toolkit ...) with exports from a module",
   "main": "./lib/index.js",
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/gdelpu/vandevelde"
+  },
   "files": [
     "lib/**"
   ],
