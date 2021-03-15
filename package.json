@@ -1,6 +1,6 @@
 {
   "name": "@biker/vandevelde",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "This a a HAPI plugin meant to decorate Hapi objects (server, request, handler, toolkit ...) with exports from a module",
   "main": "./lib/index.js",
   "repository": {
