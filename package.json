@@ -1,11 +1,11 @@
 {
   "name": "@biker/vandevelde",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "This a a HAPI plugin meant to decorate Hapi objects (server, request, handler, toolkit ...) with exports from a module",
   "main": "./lib/index.js",
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/gdelpu/vandevelde"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdelpu/vandevelde"
   },
   "files": [
     "lib/**"
@@ -29,5 +29,8 @@
     "@hapi/lab": "^22.0.4",
     "coveralls": "^3.0.11",
     "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "sinon": "^9.2.4"
   }
 }
