@@ -3,6 +3,7 @@
 const Lab = require('@hapi/lab');
 const { expect } = require('@hapi/code');
 const Hapi = require('@hapi/hapi');
+const Sinon = require('sinon');
 
 const { afterEach, beforeEach, describe, it } = exports.lab = Lab.script();
 const Vandevelde = require('..');
@@ -80,7 +81,7 @@ describe('Vandevelde', () => {
         expect(callRegister).not.to.throw();
     });
 
-    it('should accept objects as module', () => {
+    it('should accept modules exporting objects', () => {
 
         const callRegister = async function () {
 
@@ -97,7 +98,24 @@ describe('Vandevelde', () => {
         expect(callRegister).not.to.throw();
     });
 
-    it('should accept function as module', () => {
+    it('should accept paths in options.module', () => {
+
+        const callRegister = async function () {
+
+            await server.register([{
+                plugin: Vandevelde,
+                options: {
+                    name: './fixture/fModule',
+                    module: myFunctModule,
+                    decorate: ['server']
+                }
+            }]);
+        };
+
+        expect(callRegister).not.to.throw();
+    });
+
+    it('should accept modules exporting functions', () => {
 
         const callRegister = async function () {
 
@@ -112,6 +130,58 @@ describe('Vandevelde', () => {
         };
 
         expect(callRegister).not.to.throw();
+    });
+
+    it('should execute module\'s exported function', async () => {
+
+        const myModuleFunct = Sinon.spy();
+
+        await server.register([{
+            plugin: Vandevelde,
+            options: {
+                name: 'myModule',
+                module: myModuleFunct,
+                decorate: ['server']
+            }
+        }]);
+
+        expect(myModuleFunct.called).to.be.true();
+    });
+
+    it('should pass "server" as parameter of module\'s exported function', async () => {
+
+        const myModuleFunct = Sinon.spy();
+
+        await server.register([{
+            plugin: Vandevelde,
+            options: {
+                name: 'myModule',
+                module: myModuleFunct,
+                decorate: ['server']
+            }
+        }]);
+
+        expect(myModuleFunct.firstCall.firstArg).to.be.include('server');
+    });
+
+    it('should add "server" to options passed in plugin\'s options', async () => {
+
+        const myModuleFunct = Sinon.spy();
+
+        await server.register([{
+            plugin: Vandevelde,
+            options: {
+                name: 'myModule',
+                module: myModuleFunct,
+                options: { a: 123, b: '456' },
+                decorate: ['server']
+            }
+        }]);
+
+        expect(myModuleFunct.firstCall.firstArg)
+            .to.include('server')
+            .and
+            .to.include({ a: 123, b: '456' });
     });
 
     it('should create a hosting property named after options.name', async () => {
